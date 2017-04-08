@@ -1,0 +1,22 @@
+# Learn more about services, parameters and containers at
+# http://symfony.com/doc/current/service_container.html
+parameters:
+    #parameter_name: value
+
+services:
+    #service_name:
+    #    class: AppBundle\Directory\ClassName
+    #    arguments: ['@another_service_name', 'plain_value', '%parameter_name%']
+
+    guzzle_http_client:
+        class: AppBundle\Service\GuzzleHttpClient
+        arguments:
+            - "@guzzle.client.8p_guzzle_client"
+
+    buzz_http_client:
+        class: AppBundle\Service\BuzzHttpClient
+
+    githubApi:
+        class: AppBundle\Service\GitHubApi
+        arguments:
+            - "@guzzle_http_client"

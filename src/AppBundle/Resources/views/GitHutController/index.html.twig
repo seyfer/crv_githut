@@ -1,0 +1,21 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}AppBundle:GitHutController:index{% endblock %}
+
+{% block body %}
+    <div class="col-md-3 user-info">
+
+        {#{% include '@App/GitHutController/profile.html.twig' %}#}
+
+        {{ render(controller('AppBundle:Githut:profile', { 'username': username })) }}
+
+    </div>
+
+    <div class="col-md-9">
+
+        {#{% include '@App/GitHutController/repos.html.twig' %}#}
+
+        {{ render (controller('AppBundle:Githut:repos', { 'username': username })) }}
+    </div>
+
+{% endblock %}
